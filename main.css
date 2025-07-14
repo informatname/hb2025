@@ -1,0 +1,105 @@
+@font-face {
+    font-family: HbFont; 
+    src: url("Angeme.ttf"); 
+  }
+
+* {
+  box-sizing: border-box; 
+}
+
+body{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow-x: hidden;
+  font-family: HbFont, Tahoma ;
+  background: #FFF;
+  overflow-y: auto;
+  height: 100vh;
+  width: 100vw;
+  background-image: url("images/fone.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 100% 0%;
+  margin: 0;
+  padding: 0;
+  color: white;  
+}
+.main{
+  display: flex;  
+  flex-direction: column;
+  justify-content: center;
+  flex-grow: 1;
+  margin: 0;
+  width: 100vw;
+  height: 5vh;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+  background: url("images/top.gif") repeat-x;
+  background-size: contain;
+  
+  margin: 0;
+  padding-top: 1vh;  
+  width: 100%;
+}
+.headerText{
+  padding-top: 2vh;
+  font-family: HbFont, Tahoma;
+  font-weight: 900;
+  font-size: calc(10pt + 4vw + 5vh);
+  text-align: center;
+  background-image: repeating-linear-gradient(10deg, gold 25%, red 60%, gold 80%);
+  color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+
+footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  height: 25px;
+  margin: 0;
+  background: rgb(200, 200, 222);
+  text-align: center;
+  z-index: 99;
+  background: linear-gradient(180deg, rgba(22, 34, 123, 0.3) 0%, rgba(51, 93, 207, 0.3) 50%, rgba(0,255,256,0.3) 100%);
+	text-align: center;
+	z-index: 999;
+	font-family: Arial;
+  font-size: calc(0.1em + 1.5vh + 0.1vw );
+  color: black;
+}
+
+.ver {
+  font-size: 0.7em;
+  text-shadow: none;
+  font-family: Arial;
+  color: rgb(51, 93, 207);
+  padding-left: 10%;
+}
+
+
+@keyframes animate{ 
+  0%{ 
+    opacity: 0; 
+  } 
+  30%{ 
+    opacity: 0.9; 
+  } 
+  70%{ 
+    opacity: 1.0; 
+  } 
+  100%{ 
+    opacity: 0; 
+  } 
+} 
+
