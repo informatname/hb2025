@@ -29,6 +29,8 @@ body{
   margin: 0;
   width: 1000px;
   height: 500px;
+  background-color: rgb(255, 208, 0);
+  cursor: pointer;
 }
 
 header {
