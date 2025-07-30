@@ -5,18 +5,18 @@ document.addEventListener("DOMContentLoaded",
 let EraserDown=false;
 
 function start() {
-  const MenuSize = 123// Временно
+  const MenuSize = 0// Временно
   EraserDown=false;
 
   let canvas = document.getElementById('upScreen');
   if (canvas && canvas.getContext) {
-    let id = document.getElementsByClassName(`main`)[0];
+    let id = document.getElementsByClassName(`screen`)[0];
     let p = id.getBoundingClientRect();
 
     //canvas.width = window.innerWidth * 0.8 - MenuSize;
     //canvas.height = window.innerHeight * 0.6;
-    canvas.width = p.width * 0.9 - MenuSize;
-    canvas.height = p.height * 0.8;
+    canvas.width = p.width * 0.99 - MenuSize;
+    canvas.height = p.height * 0.99;
 
     var ctx = canvas.getContext('2d');
 
