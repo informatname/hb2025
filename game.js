@@ -8,25 +8,33 @@ function start() {
   const MenuSize = 0// Временно
   EraserDown=false;
 
-  let canvas = document.getElementById('upScreen');
-  if (canvas && canvas.getContext) {
+  let upCanvas = document.getElementById('upScreen');
+  let hideCanvas = document.getElementById('hideScreen');
+  if (upCanvas && upCanvas.getContext) {
     let id = document.getElementsByClassName(`screen`)[0];
     let p = id.getBoundingClientRect();
 
     //canvas.width = window.innerWidth * 0.8 - MenuSize;
     //canvas.height = window.innerHeight * 0.6;
-    canvas.width = p.width * 0.99 - MenuSize;
-    canvas.height = p.height * 0.99;
+    upCanvas.width = p.width * 0.99 - MenuSize;
+    upCanvas.height = p.height * 0.99;
+    upCanvas.style.top = p.top+"px";
+    upCanvas.style.left = p.left+"px";
 
-    var ctx = canvas.getContext('2d');
+    hideCanvas.width = upCanvas.width;
+    hideCanvas.height = upCanvas.height;
+    hideCanvas.style.top = p.top+"px";
+    hideCanvas.style.left = p.left+"px";
+
+    var ctx = upCanvas.getContext('2d');
 
     var pic = new Image();
     pic.src = "images/back.jpg";
 
 
   pic.onload = function () {
-    for (var i = 0; i <= canvas.width; i+=200) {
-      for (var j = 0; j <= canvas.height; j+=200) {
+    for (var i = 0; i <= upCanvas.width; i+=200) {
+      for (var j = 0; j <= upCanvas.height; j+=200) {
         ctx.drawImage(pic, i, j, 200, 200);
       }
     }
@@ -38,9 +46,9 @@ function start() {
   }
   
   //canvas.onmousemove="EraserMove(event)"
-  canvas.addEventListener("mousedown", (event) => eraserStart(event));
-  canvas.addEventListener("mouseup", (event) => eraserStop(event));
-  canvas.addEventListener("mousemove", (event) => eraserMove(event));
+  upCanvas.addEventListener("mousedown", (event) => eraserStart(event));
+  upCanvas.addEventListener("mouseup", (event) => eraserStop(event));
+  upCanvas.addEventListener("mousemove", (event) => eraserMove(event));
 }
 
 function erase(X,Y){

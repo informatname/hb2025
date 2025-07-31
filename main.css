@@ -33,7 +33,7 @@ body{
   margin: 10px;
   width: 100%;
   max-height: 90vh;
-  background-color: rgba(200, 9, 32, 0.9);
+  border: blue solid 1px;
 }
 .screen{
   margin: 0;
@@ -47,9 +47,20 @@ body{
   width: 10vw;
   min-width: 100px;
   height: 100%;
-  background-color: green;
+  border: red solid 1px;
 }
 
+#upScreen{
+  position: absolute;
+ 	z-index: 10;
+  border: gray ridge 5px;
+}
+#hideScreen{
+  position: absolute;
+  background-color: rgb(210, 210, 0);
+	z-index: 1;
+  border: darkgoldenrod ridge 5px;
+}
 
 header {
   display: flex;
@@ -69,7 +80,7 @@ header {
   font-weight: 900;
   font-size: calc(10pt + 4vw + 5vh);
   text-align: center;
-  background-image: repeating-linear-gradient(10deg, gold 25%, red 60%, gold 80%);
+  background-image: repeating-linear-gradient(-25deg,red 10%, gold 10%, red 30%, gold 40%, red 10%);
   color: transparent;
   background-clip: text;
   -webkit-background-clip: text;
