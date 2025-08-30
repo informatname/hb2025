@@ -106,6 +106,13 @@ footer {
   color: black;
 }
 
+.cursorWait{
+   cursor: wait;  
+}
+.cursorErase{
+   cursor: pointer;  
+}
+
 .ver {
   font-size: 0.7em;
   text-shadow: none;

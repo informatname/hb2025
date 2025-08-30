@@ -1,0 +1,133 @@
+#Gift{
+	max-width: min( 15vh , 15vw) ;
+        width: 16vh;
+        min-width: calc( 1vh + 1vw + 1em + 1ex + 30px );
+	z-index: 19;
+	cursor: pointer;	
+	position: absolute;
+	right:  50%;
+	top:  50%;
+	opacity: 0.5; 
+	background: url(images/tr_pix.png) ;
+}
+
+div.gift{
+	width: 58px;
+	height: 58px;
+	margin: 0px;
+	background: url(images/gift-box.png) no-repeat 50% 50%;
+	background-size: 100%;
+	transition:  0.5s;
+}
+
+div.gift:hover{
+	width: 58px;
+	height: 58px;
+	margin: 0px;
+	background: url(images/pic12.gif) no-repeat 50% 50%;
+	background-size: 100%;
+}
+
+
+
+img.picgift{
+	width: 90%;
+	z-index:999;
+	background: none;
+}
+img.picgiftReal{
+	width: 90%;
+	background: none;
+	cursor: pointer;
+}
+
+
+img.picgift:hover{
+	background: none;
+	transition:  1.5s;
+}
+
+
+
+#CongDiv{
+    display: none;
+    position: fixed;
+    z-index: 999;
+    margin: 0;
+    padding: 1vw;
+    left:0;
+    top:0; 
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background: url('images/fone.jpg');
+	background-repeat: repeat;
+	---background-size: 90%;
+    background-color: rgba(30, 0,40, 0.9); 
+    cursor: pointer;
+    vertical-align: top;
+    text-align: center;
+    transition: 2s;
+}
+#CongDivFlex{
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-content: space-between;
+	align-items: center;
+}
+
+#CongImg{
+	background-color: rgba(200, 200, 200, 1.0); 
+    --margin: 1vh;
+	max-width: 99%;
+    max-height: 99%;
+	height: min( 50vh, 60vw );
+    border: 1px solid #aaaaaa;
+	border-radius: 10px;
+	text-align: center;
+}
+
+
+.CongImgW{
+	height: 99%;
+	max-width: 99%;
+}
+
+.CongImgH{
+	max-height: 99%;
+	width: 99%;
+}
+
+#CongOver{
+	align-self: center;
+	max-width: 99vw;
+	padding: calc(0.2vh + 0.1vw );
+	margin-top: 5vh;
+	background:  rgba(250, 250, 0, 0.5);
+    background-size: 5% 5%;
+	background-repeat: repeat;
+	border-radius: 10px;
+}
+
+#CongText{
+	font-size: calc(1em + 1.5vh + 0.5vw );
+	font-weight: bolder;
+	padding: 1vh;
+	color: #BB3300;
+	text-shadow: 1px  1px 10px white,
+				-1px -1px 10px white,
+				 1px -1px 10px white,
+			 1px -1px 10px white; 
+ }
+ 
+
+.repeat{
+	align-self: flex-end;
+	color: orange;
+	font-size: calc(1em + 1.5vh + 0.5vw);
+	font-weight: bolder;
+	padding-top: 0.4em;
+	padding-right: 1em;
+	margin: 1%;
+}

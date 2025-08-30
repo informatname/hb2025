@@ -13,15 +13,35 @@
   <title> &#10024; &#10060; &#11093; С Днём Рождения! &#127873; &#x1F389; &#127874; </title>
 
         <link rel="stylesheet" href="main.css">
+        <link rel="stylesheet" href="gift.css">
         
         <script type="text/javascript" src="game.js"></script>
-        
+        <script type="text/javascript" src="cards.js"></script>
+
+        <script type="text/javascript" src="images/images.js"></script>
+        <link rel="stylesheet" href="loader.css">
+        <script type="text/javascript" src="loader.js"></script>
+        <script type="text/javascript" src="gift.js"></script>
+
+
 
 </head>
         
 <body>
 
   <header> <span class="headerText">С днём рождения!</span> </header>
+
+  <div id="Loading" class="loading">
+  <div id="loadingIn">
+    <div class="load_ind">
+    Загружаюсь...
+    </div>
+    <div class="load_snow">
+    &#10052;
+    </div>
+  </div>
+  </div>
+
   <div class="main">
 
       <div class="screen">
@@ -30,8 +50,20 @@
       </div>
       <div class="menu"> menu </div>
   </div>
+
+  <div id="CongDiv" title="Торопиться не надо...">
+  <div id="CongDivFlex">
+    <div id="CongText"></div>
+    
+    <div id="CongOver">
+        <img class="Cong" src="images/img02.gif" id="CongImg" class="gift"/>
+    </div>
+    <span class="repeat" title="Торопиться не надо...">ещё &#8635;</span>
+  </div>
+</div>
+
   <footer>
-    Пупышев В.В. для проекта&nbsp; <A href="http://informat.name/">ИНФОРМАТ</A> <span class="ver">(250731)</span>
+    Пупышев В.В. для проекта&nbsp; <A href="http://informat.name/">ИНФОРМАТ</A> <span class="ver">(250820)</span>
   </footer>
 </body>
 
