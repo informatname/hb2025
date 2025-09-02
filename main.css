@@ -39,15 +39,16 @@ body{
   margin: 0;
   width: 100%;
   height: 100%;
-  background-color: rgb(150, 194, 255);
+  ---background-color: rgb(150, 194, 255);
   cursor: pointer;
 }
 .menu{
   margin: 1px;
-  width: 10vw;
+  width: 15%;
   min-width: 100px;
   height: 100%;
   border: red solid 1px;
+     color: black;
 }
 
 #upScreen{

@@ -42,12 +42,12 @@ let HideCards=[];
 
 
 
-function PutCards(){
+function PutCards(eraserW, eraserH){
     let hideCanvas = document.getElementById('hideScreen');
    	let ctx = hideCanvas.getContext('2d');
 
-    const W = 60;
-    const H = 60;
+    const W = eraserW / 2;
+    const H = eraserH / 2;
    
     HideCards=[];
 

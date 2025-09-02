@@ -1,9 +1,20 @@
 document.addEventListener("DOMContentLoaded",
-  start
+  function (){
+         ////    let id = document.getElementsByClassName('menu')[0];
+         ////id.innerHTML = "TachScreen<br>";
+
+  start();
+  
+
+
+  }
 )
 
 let EraserDown=false;
 let EraserMove=false;
+const MaxCanvas = 1300;
+const MaxBaseEraseSize = 130;
+const MinBaseEraseSize = 32;
 
 let Ecursor = "wait";
 
@@ -25,7 +36,9 @@ function start() {
     //canvas.width = window.innerWidth * 0.8 - MenuSize;
     //canvas.height = window.innerHeight * 0.6;
     upCanvas.width = p.width * 0.99 - MenuSize;
+    if( upCanvas.width > MaxCanvas ) upCanvas.width = MaxCanvas;
     upCanvas.height = p.height * 0.99;
+    if( upCanvas.height > MaxCanvas ) upCanvas.height = MaxCanvas;
     upCanvas.style.top = p.top+"px";
     upCanvas.style.left = p.left+"px";
 
@@ -40,33 +53,89 @@ function start() {
     pic.src = "images/back.jpg";
     // pic.src = "card/c01.jpg";
     // console.log(pic)
-
-
+    
+    let eraserSize = MaxBaseEraseSize;
+    if ( upCanvas.width > upCanvas.height )
+      eraserSize = eraserSize * upCanvas.width / MaxCanvas;
+    else
+      eraserSize = eraserSize * upCanvas.height / MaxCanvas;
+    if ( eraserSize < MinBaseEraseSize )
+      eraserSize = MinBaseEraseSize;
+  console.log("eraserSize : ", eraserSize );
   pic.onload = function () {
-    for (var i = 0; i <= upCanvas.width; i+=200) {
-      for (var j = 0; j <= upCanvas.height; j+=200) {
-        ctx.drawImage(pic, i, j, 200, 200);
+    for (var i = 0; i <= upCanvas.width; i+=eraserSize) {
+      for (var j = 0; j <= upCanvas.height; j+=eraserSize) {
+        ctx.drawImage(pic, i, j, eraserSize, eraserSize);
       }
     }
 
-    PutCards();
+    PutCards(eraserSize, eraserSize);
     Ecursor = "pointer";
     upCanvas.style.cursor = Ecursor;
   };
   
-
-  //  ctx.putImageData(pic, 0, 0);
-
   }
   
-  //canvas.onmousemove="EraserMove(event)"
-  upCanvas.addEventListener("mousedown", (event) => eraserStart(event));
-  upCanvas.addEventListener("mouseup", (event) => eraserStop(event));
-  upCanvas.addEventListener("mousemove", (event) => eraserMove(event));
+  
+  upCanvas.addEventListener("mousedown", (event) => eraserStart(event), false);
+  upCanvas.addEventListener("touchstart", function (event) {
+         ////let id = document.getElementsByClassName('menu')[0];
+         ////id.innerHTML+="touchstart<br>";
+         event.stopPropagation();
+         event.preventDefault();
+         EraserMove=false;
+         let Mouse_X = event.changedTouches[0].pageX; 
+         let Mouse_Y = event.changedTouches[0].pageY;
+         fingerErase(Mouse_X, Mouse_Y);
+      }, false);
 
-  upCanvas.addEventListener("click", (event) => eraserClick(event));
+
+  upCanvas.addEventListener("mousemove", (event) => eraserMove(event));
+  upCanvas.addEventListener("touchmove", function (event) {
+         ////let id = document.getElementsByClassName('menu')[0];
+         ////id.innerHTML+="touchmove<br>";
+
+	       event.stopPropagation();
+         event.preventDefault();
+         EraserMove = true;
+         let Mouse_X = event.changedTouches[0].pageX; 
+         let Mouse_Y = event.changedTouches[0].pageY;
+         fingerErase(Mouse_X, Mouse_Y);
+      });
+
+  upCanvas.addEventListener("mouseup", (event) => eraserStop(event));
+  upCanvas.addEventListener("touchend", function (event) {
+         ////let id = document.getElementsByClassName('menu')[0];
+         ////id.innerHTML+="touchend "+EraserMove+"<br>";
+
+         //event.stopPropagation();
+         //event.preventDefault();
+         let Mouse_X = event.changedTouches[0].pageX; 
+         let Mouse_Y = event.changedTouches[0].pageY;
+         ////window.alert("touchend");
+         fingerClick(Mouse_X, Mouse_Y);
+  }); 
+
+  //upCanvas.addEventListener("click", (event) => eraserClick(event));
+  upCanvas.onclick = eraserClick;
+
+  window.addEventListener("resize", start, true);
 }
 
+function fingerErase(X, Y ) {
+    if (X === undefined) X = Mouse_X;
+    if (Y === undefined) Y = Mouse_Y;
+    console.log("fingerErase: ",X, Y);
+    erase(X, Y);            
+}
+
+function fingerClick(X, Y ) {
+    console.log("fingerClick: ",X, Y);
+    if( ! EraserMove ){
+       ////window.alert(X+":"+Y);
+       clickPic(X,Y);
+    }
+}
 function erase(X,Y){
 
 let canvas = document.getElementById('upScreen');
@@ -92,12 +161,14 @@ let canvas = document.getElementById('upScreen');
 
 function clickPic(X,Y){
 
+////let id = document.getElementsByClassName('menu')[0];
+////id.innerHTML+="click<br>";
+
 let canvas = document.getElementById('upScreen');
   
   if (canvas && canvas.getContext){
   	let ctx = canvas.getContext('2d');
     let p = canvas.getBoundingClientRect();
-
     let x = X-p.left;
     let y = Y-p.top;
     
@@ -136,4 +207,8 @@ function eraserStop(){
 function eraserClick(E){
   if( ! EraserMove )	
     clickPic(E.clientX,E.clientY); 
+}
+
+function NewGame(){
+  start();
 }

@@ -1,6 +1,6 @@
 let imagesPIC = {
 
-    "ico01"  : "i01.jpg",
+    "ico01"  : "i01.jpg", 
     "ico02"  : "i02.jpg",
     "ico03"  : "i03.jpg",
     "ico04"  : "i04.jpg",
@@ -23,8 +23,8 @@ let imagesPIC = {
     "pic09"  : "c09.gif",
 
         
-        "---"  : "",
-    "fone" : ""
+    "---"  : "fone1.jpg",
+    "fone" : "fone.jpg"
     
 };
 
