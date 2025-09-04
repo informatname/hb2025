@@ -13,10 +13,12 @@
   <link rel="icon" href="fav_ico.gif" type="image/gif">
   <link rel="shortcut icon" href="fav_ico.png" type="image/gif">
 
-  <title> &#10024; &#10060; &#11093; С Днём Рождения! &#127873; &#x1F389; &#127874; </title>
+  <title> &#10024; &#129497; &#128140; С Днём Рождения! &#127873; &#x1F389; &#127874; </title>
 
         <link rel="stylesheet" href="main.css">
         <link rel="stylesheet" href="gift.css">
+        <link rel="stylesheet" href="olen/olen.css">
+        <link rel="stylesheet" href="audio/audio.css">
         
         <script type="text/javascript" src="game.js"></script>
         <script type="text/javascript" src="cards.js"></script>
@@ -25,8 +27,9 @@
         <link rel="stylesheet" href="loader.css">
         <script type="text/javascript" src="loader.js"></script>
         <script type="text/javascript" src="gift.js"></script>
-
-
+        <script type="text/javascript" src="olen/olen.js"></script>
+        <script type="text/javascript" src="audio/audio.js"></script>
+        <script type="text/javascript" src="select.js"></script>
 
 </head>
         
@@ -51,7 +54,7 @@
          <canvas id="upScreen"></canvas>
          <canvas id="hideScreen"></canvas>
       </div>
-      <div class="menu"> menu </div>
+      <div class="menu"> </div>
   </div>
 
   <div id="CongDiv" title="Торопиться не надо...">
@@ -65,8 +68,34 @@
   </div>
 </div>
 
+<div id="OlenDiv">
+  <div class="Olen" id="OlenSay">
+      <span class="Olen"> ? </span><br>
+      <h2 class="Olen">&#127874; С Днём Рождения! &#127881;  </h2>
+
+      &#129497; Весёлый гном спрятал поздравительные открытки под защитным слоем. <br>
+      &#127924; Стираем защитный слой<br>
+      &#128140; Выбираем одну из открыток. <br>
+      
+      &#10024; &#10024; &#10024; &#10024; &#10024;
+      <br>
+      <br>
+
+      <fieldset class="audio">
+          <legend class="audio"> &#128266; Управление музыкой </legend>
+          <audio autoplay="autoplay" controls>
+              Ваш браузер не поддерживает тег audio!</audio>
+          <nobr><button class="audio" id="audioNext">N</button>&nbsp;-&nbsp;следующая мелодия.</nobr>
+          <nobr><button class="audio" id="audioRnd">R</button>&nbsp;-&nbsp;случайная мелодия.</nobr>
+          <nobr><button class="audio" id="audioExt">E</button>&nbsp;-&nbsp;добавить мелодий.</nobr>
+          <nobr><button class="audio" id="audioIni">S</button>&nbsp;-&nbsp;стандартный набор.</nobr>
+      </fieldset>
+      <div id="IdError"></div>
+  </div>
+</div>
+
   <footer>
-    Пупышев В.В. для проекта&nbsp; <A href="http://informat.name/">ИНФОРМАТ</A> <span class="ver">(2508901o)</span>
+    Пупышев В.В. для проекта&nbsp; <A href="http://informat.name/">ИНФОРМАТ</A> <span class="ver">(2508903)</span>
   </footer>
 </body>
 

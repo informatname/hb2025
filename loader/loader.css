@@ -1,0 +1,46 @@
+.loading{
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  z-index: 10000;
+  display: block;
+  font-size: 5vw;
+  color: white;
+  justify-content: center;
+  background: rgba(55, 155, 155, 0.95) url('loading.gif') 20% 50% no-repeat;
+  padding: 5vmax;
+  margin: 0;
+  cursor: wait;
+  width: 100vw;
+  height: 100vh;
+}
+.load_ind{
+  display: block;
+  animation: blink 1.6s infinite alternate;
+  font-size: 8vw;
+  width: 8vw;
+  height: 9vw;
+}
+.load_snow{
+  padding: 0;                          	
+  display: block;
+  animation: rota 10s infinite alternate;
+  font-size: 9vw;
+  min-width: 2ex;
+  width: 11vw;
+}
+
+@keyframes rota {
+  to { transform: rotate(720deg); }
+  to { margin-left: 70%; }
+
+}
+
+@keyframes blink {
+  from { color: rgba(100, 255, 10, 0.7) }
+  to { color: rgba(10, 10, 255, 0.7) }
+}
+
+.load_ind img {
+ width:20%;
+}

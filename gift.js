@@ -12,10 +12,12 @@ document.addEventListener("DOMContentLoaded",
 
       CongDiv.removeEventListener("click", CongHide);
 
-      var IDtext = document.getElementById("CongText");
-      var IDdiv = document.getElementById("CongDiv");
-      var IDpic = document.getElementById("CongImg");
+      let IDtext = document.getElementById("CongText");
+      let IDdiv = document.getElementById("CongDiv");
+      let IDpic = document.getElementById("CongImg");
       IDpic.src = "images/loading.gif"; 
+      IDdiv.style.cursor = "wait";
+
       GameOverResize();
     
       IDtext.innerHTML = "Поздравление:" ;
@@ -31,6 +33,9 @@ document.addEventListener("DOMContentLoaded",
 
       setTimeout(()=>{
          CongDiv.addEventListener("click", CongHide);
+         let IDdiv = document.getElementById("CongDiv");
+         IDdiv.style.cursor = "pointer";
+
       },
       9000);
   }
@@ -40,10 +45,10 @@ document.addEventListener("DOMContentLoaded",
    }
 
    function CongHide() {
-      var IDdiv = document.getElementById("CongDiv");
+      let IDdiv = document.getElementById("CongDiv");
       IDdiv.style.display = "none";
 
-      var Loading = document.getElementById("CongImg");
+      let Loading = document.getElementById("CongImg");
       Loading.innerHTML = "";
       //console.log("Loading: " + Loading.src);
       
@@ -55,7 +60,7 @@ document.addEventListener("DOMContentLoaded",
    }
 
    function GameOverResize(){
-      var IDpic = document.getElementById("CongImg");
+      let IDpic = document.getElementById("CongImg");
       if( window.innerWidth < window.innerHeight ) {
            IDpic.classList.remove("CongImgW");
            IDpic.classList.add("CongImgH");

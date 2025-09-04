@@ -33,7 +33,7 @@ body{
   margin: 10px;
   width: 100%;
   max-height: 90vh;
-  border: blue solid 1px;
+  ---border: blue solid 1px;
 }
 .screen{
   margin: 0;
@@ -47,7 +47,7 @@ body{
   width: 15%;
   min-width: 100px;
   height: 100%;
-  border: red solid 1px;
+ ---border: red solid 1px;
      color: black;
 }
 
